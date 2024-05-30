@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Estiliza o contêiner para centralização */
+    #iframe-container {
+      width: 100%; /* Faz com que o contêiner ocupe todo o espaço horizontal disponível */
+      margin: 0 auto; /* Centraliza horizontalmente */
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Estilos para tentar esconder o link */
+    iframe {
+      width: 100%;
+      height: 100vh; /* Define a altura para ocupar a visualização completa */
+      border: 0;
+    }
+
+    #iframe-container::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30px; /* Ajuste conforme necessário */
+      background: white; /* Cor de fundo para esconder o link */
+    }
+  </style>
+  <!-- Linha adicionada para incluir o favicon -->
+  <link rel="icon" type="image/png" href="energy.png"> <!-- Substitua pelo caminho do seu favicon -->
+</head>
+<body>
+  <div id="iframe-container">
+    <iframe src="https://lookerstudio.google.com/embed/reporting/ffb4d15d-3f6b-4051-b99b-165c0f773825/page/p_u420amcehd" frameborder="0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+  </div>
+</body>
+</html>
