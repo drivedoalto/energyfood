@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Página</title>
+  <link rel="icon" href="energy.png" type="image/png">
+  <style>
+    /* Estiliza o contêiner para centralização */
+    #iframe-container {
+      width: 100%; /* Faz com que o contêiner ocupe todo o espaço horizontal disponível */
+      margin: 0 auto; /* Centraliza horizontalmente */
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Estilos para tentar esconder o link */
+    iframe {
+      width: 100%;
+      height: 100vh; /* Define a altura para ocupar a visualização completa */
+      border: 0;
+    }
+
+    #iframe-container::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30px; /* Ajuste conforme necessário */
+      background: white; /* Cor de fundo para esconder o link */
+    }
+  </style>
+</head>
+<body>
+  <div id="iframe-container"></div>
+  <script>
+    function createIframe() {
+      var src = atob("aHR0cHM6Ly9sb29rZXJzdHVkaW8uZ29vZ2xlLmNvbS9lbWJlZC9yZXBvcnRpbmcvZmZiNGQxNWQtM2Y2Yi00MDUxLWI5OWItMTY1YzBmNzczODI1L3BhZ2UvcF91NDIwYW1jZWhk");
+      var iframe = document.createElement("iframe");
+      iframe.src = src;
+      iframe.frameBorder = "0";
+      iframe.allowFullscreen = true;
+      iframe.sandbox = "allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox";
+      document.getElementById("iframe-container").appendChild(iframe);
+    }
+    window.onload = createIframe;
+  </script>
+</body>
+</html>
