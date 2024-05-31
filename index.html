@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <title>Minha Página</title>
+  <link rel="icon" href="energy.png" type="image/png">
   <style>
     /* Estiliza o contêiner para centralização */
     #iframe-container {
@@ -28,12 +31,20 @@
       background: white; /* Cor de fundo para esconder o link */
     }
   </style>
-  <!-- Linha adicionada para incluir o favicon -->
-  <link rel="icon" type="image/png" href="energy.png"> <!-- Substitua pelo caminho do seu favicon -->
 </head>
 <body>
-  <div id="iframe-container">
-    <iframe src="https://lookerstudio.google.com/embed/reporting/ffb4d15d-3f6b-4051-b99b-165c0f773825/page/p_u420amcehd" frameborder="0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-  </div>
+  <div id="iframe-container"></div>
+  <script>
+    function createIframe() {
+      var src = atob("aHR0cHM6Ly9sb29rZXJzdHVkaW8uZ29vZ2xlLmNvbS9lbWJlZC9yZXBvcnRpbmcvZmZiNGQxNWQtM2Y2Yi00MDUxLWI5OWItMTY1YzBmNzczODI1L3BhZ2UvcF91NDIwYW1jZWhk");
+      var iframe = document.createElement("iframe");
+      iframe.src = src;
+      iframe.frameBorder = "0";
+      iframe.allowFullscreen = true;
+      iframe.sandbox = "allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox";
+      document.getElementById("iframe-container").appendChild(iframe);
+    }
+    window.onload = createIframe;
+  </script>
 </body>
 </html>
